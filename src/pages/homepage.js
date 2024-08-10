@@ -1,20 +1,18 @@
 import { HStack, VStack } from "@chakra-ui/react"; 
 import { Button, ButtonGroup } from '@chakra-ui/react'
-import { PhoneIcon, AddIcon, WarningIcon } from '@chakra-ui/icons'
 import { Image } from '@chakra-ui/react'
-
+import { Box } from '@chakra-ui/react'
 
 export function Homepage() {
     return (
         <VStack>
-            <Box boxSize='sm'>
-                <Image src='https://bit.ly/dan-abramov' alt='CSS Logo' />           
-            </Box>
+            <Image
+    boxSize='100px'
+    objectFit='cover'
+    Image src='https://lh3.google.com/u/0/d/1o0K_HL0ja7KUZSP_eiX2Pqhf4kQUaTAx=w1920-h946-iv2'
+    alt='CSS Logo' />           
             <HStack>
-                <PhoneIcon />
-                <AddIcon boxSize={6} />
-                <WarningIcon w={8} h={8} color="red.500" />
-                <Button colorScheme='blue'>Button</Button>
+                <Button colorScheme='blue'>CSS stuff</Button>
             </HStack>
         </VStack>
     )
