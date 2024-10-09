@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Homepage } from './pages/homepage';
 import { WhoAreWe } from './pages/whoarewe';
 import { Navbar } from './components/navbar';
+const { initializeApp } = require('firebase-admin/app');
+  
 
 function App() {
   return (
