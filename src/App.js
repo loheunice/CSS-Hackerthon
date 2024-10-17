@@ -3,9 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Homepage } from './pages/homepage';
 import { WhoAreWe } from './pages/whoarewe';
-import { Navbar } from './components/navbar';
-const { initializeApp } = require('firebase-admin/app');
-  
+import { Navbar } from './components/navbar';  
 
 function App() {
   return (
