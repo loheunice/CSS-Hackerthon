@@ -5,7 +5,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
 export function WhoAreWe() {
     const images = [
         { 
-            src: 'https://bit.ly/dan-abramov', 
+            src: 'https://th.bing.com/th/id/OIF.OV8zL19BfIi3B5YJd1fXKQ?w=180&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7', 
             name: 'Chuen Rae', 
             email: 'chuenrae@example.com',
             phone: '1234567890',
@@ -13,7 +13,7 @@ export function WhoAreWe() {
             facebook: '@chuenrae'
         },
         { 
-            src: 'https://bit.ly/ryan-florence', 
+            src: 'https://www.humanesociety.org/sites/default/files/2019/03/rabbit-475261_0.jpg', 
             name: 'Eunice', 
             email: 'eunice@example.com',
             phone: '0987654321',
@@ -21,7 +21,7 @@ export function WhoAreWe() {
             facebook: '@eunice'
         },
         { 
-            src: 'https://bit.ly/kent-c-dodds', 
+            src: 'https://i.pinimg.com/474x/c4/66/90/c466907bfa75c5598d6a193a589531a4.jpg', 
             name: 'Sanjana', 
             email: 'sanjana@example.com',
             phone: '1112223333',

@@ -54,12 +54,25 @@ export function Navbar() {
           to="/whoarewe"
           colorScheme="teal"
           variant={activeButton === 'whoarewe' ? 'solid' : 'outline'}
-          _hover={{ borderColor: "teal.600", color: "teal.600", transform: "scale(1.05)" }} // Hover effect
-          _active={{ bg: "teal.700", color: "white", transform: "scale(1.05)" }} // Active effect
+          _hover={{ bg: "teal.600", transform: "scale(1.05)" }} // Hover effect
+          _active={{ bg: "teal.700", transform: "scale(1.05)" }} // Active effect
           transition="all 0.3s ease"
           onClick={() => handleButtonClick('whoarewe')}
         >
           Who Are We
+        </Button>
+
+        <Button
+          as={Link}
+          to="forothers"
+          colorScheme="teal"
+          variant={activeButton === 'for_others' ? 'solid' : 'outline'}
+          _hover={{ bg: "teal.600", transform: "scale(1.05)" }} // Hover effect
+          _active={{ bg: "teal.700", transform: "scale(1.05)" }} // Active effect
+          transition="all 0.3s ease"
+          onClick={() => handleButtonClick('for_others')}
+        >
+          For others
         </Button>
       </HStack>
     </HStack>

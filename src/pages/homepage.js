@@ -8,10 +8,14 @@ import { Avatar } from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import { IconButton } from "@chakra-ui/react";
-
+import { getFirestore, collection } from 'firebase/firestore';
+import { useCollection } from 'react-firebase-hooks/firestore';
 
 export function Homepage() {
+  
+
   return (
+    
     <VStack>
       <HStack style={{ alignItems: "stretch" }}>
         <Card maxW='md' >
@@ -29,7 +33,7 @@ export function Homepage() {
           </CardHeader>
           <CardBody>
             <Text>
-              i dont like organic chemistry too many functional groups alkanes alkenes arenes nitrogenous bases carboxylic derivatives
+              i dont like organic chemistry too many functional groups alkanes alkenes arenes nitrogenous bases carboxylic derivatives halogen derivatives
             </Text>
           </CardBody>
           <Image
@@ -103,15 +107,14 @@ export function Homepage() {
 
                 <Box>
                   <Heading size='sm'>Sanjana</Heading>
-                  <Text>Rizz Master</Text>
+                  <Text>Sad kid</Text>
                 </Box>
               </Flex>
             </Flex>
           </CardHeader>
           <CardBody>
             <Text>
-              Can we pretend that airplanes in the night sky are like shooting stars. I could really use a wish right now WISH RN WISH RNNN
-              brainrot is real homies
+              Pineapples belong on pizza
             </Text>
           </CardBody>
           <Image
@@ -137,3 +140,64 @@ export function Homepage() {
     </VStack>
   )
 }
+
+const BlogPosts = () => {
+  const [value, loading, error] = useCollection(
+    collection(getFirestore(firebaseApp), 'blog'),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
+    }
+  );
+  return (
+    <div>
+      <p>
+        {error && <strong>Error: {JSON.stringify(error)}</strong>}
+        {loading && <span>blog: Loading...</span>}
+        {value && (
+          <span>
+            blog:{' '}
+            {value.docs.map((doc) => (
+             <Card maxW='md'>
+             <CardHeader>
+               <Flex spacing='4'>
+                 <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
+                   <Avatar name='Sanjana' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvk01gK2CRQk9n62KsjWQymzEAOyfcLasRlQ&s' />
+   
+                   <Box>
+                     <Heading size='sm'>Sanjana</Heading>
+                     <Text>Sad kid</Text>
+                   </Box>
+                 </Flex>
+               </Flex>
+             </CardHeader>
+             <CardBody>
+               <Text>
+                 Pineapples belong on pizza
+               </Text>
+             </CardBody>
+             <Image
+               objectFit='cover'
+               src='https://i1.sndcdn.com/artworks-btEZS3uZZbZlsOz5-loxvTg-t500x500.jpg'
+               w="500px"
+               h="405px"
+   
+             />
+   
+             <CardFooter
+               justify='space-between'
+               flexWrap='wrap'
+               sx={{
+                 '& > button': {
+                   minW: '136px',
+                 },
+               }}
+             >
+             </CardFooter>
+           </Card>
+            ))}
+          </span>
+        )}
+      </p>
+    </div>
+  );
+};
